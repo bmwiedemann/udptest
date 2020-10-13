@@ -6,8 +6,9 @@ use POSIX;
 $| = 1;
 
 my $host = $ENV{host}||"zq1.de";
+my $port = $ENV{port}||12254;
 my $sock = IO::Socket::INET6->new(
-        LocalPort => 12254,
+        LocalPort => $port,
         PeerAddr => $host,
         PeerPort => 12255,
         Proto => 'udp',
